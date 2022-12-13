@@ -1,0 +1,20 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: publish-local-registry
+    image: plugins/docker
+    settings:
+      dockerfile: Dockerfile
+      tags: latest
+      insecure: false
+      registry: registry.gujarulab.cc
+      repo: registry.gujarulab.cc/todofe
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+
+trigger:
+  branch:
+    - master
