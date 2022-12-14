@@ -9,7 +9,7 @@ steps:
       tags: latest
       insecure: false
       registry: registry.gujarulab.cc
-      repo: gujarulab.cc/todofe
+      repo: registry.gujarulab.cc/todofe
       username:
         from_secret: docker_username
       password:
