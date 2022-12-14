@@ -5,7 +5,10 @@ COPY package.json /app/
 COPY yarn.lock /app/
 RUN yarn --silent
 COPY ./ /app
-CMD ["yarn", "build"]
+RUN yarn tsc 
+RUN yarn vite build
+# CMD ["yarn", "build"] # this does not work
+RUN ls /app
 
 FROM nginx:alpine
 # Set working directory to nginx asset directory
