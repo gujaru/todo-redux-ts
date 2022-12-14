@@ -48,6 +48,7 @@ const NewTodoForm = () => {
                 onClick={async (e) => {
                     const isDuplicateText = todos.some(todo => todo.text.toLowerCase() === inputValue.toLowerCase());
                     if (!isDuplicateText) {
+                        // @ts-ignore
                         await dispatch(saveNewTodo(inputValue));
                         setInputValue('');
                     } else {

@@ -14,6 +14,7 @@ const ListWrapper = styled.div`
 const TodoList = () => {
     const dispatch = useDispatch();
     useEffect(() => {
+        // @ts-ignore
         dispatch(fetchTodos());
     }, []);
 
@@ -23,9 +24,11 @@ const TodoList = () => {
 
     const loadingMessage = <div>Loading todos...</div>;
     const onClickRemove = () => async (id: number) => {
+        // @ts-ignore
         await dispatch(removeTodo(id))
     }
     const onClickToggleComplete = () => async (id: number) => {
+        // @ts-ignore
         await dispatch(toggleTodo(id))
     };
 
